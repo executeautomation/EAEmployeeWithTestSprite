@@ -1,0 +1,1025 @@
+[
+  {
+    "id": "TC001",
+    "title": "Successful login navigates user to Employee List",
+    "description": "Verifies that a user can log in with valid credentials and is routed to the employee list page.",
+    "category": "User Login",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Login\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username input field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password input field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Employee List\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Login fails when password is empty",
+    "description": "Verifies that submitting the login form with an empty password shows an invalid-credentials error message.",
+    "category": "User Login",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Login\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username input field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"invalid credentials\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/login\""
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Login fails with incorrect password",
+    "description": "Verifies that submitting the login form with a wrong password shows an invalid-credentials error message and does not navigate away.",
+    "category": "User Login",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Login\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Type \"fake.user@example.com\" into the username input field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"wrong-password-123\" into the password input field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"invalid credentials\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/login\""
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Login fails when username is empty",
+    "description": "Verifies that submitting the login form with an empty username shows an invalid-credentials error message.",
+    "category": "User Login",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Login\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password input field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"invalid credentials\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/login\""
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Login fails when both username and password are empty",
+    "description": "Verifies that submitting the login form with both fields empty shows an invalid-credentials error message.",
+    "category": "User Login",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Login\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"invalid credentials\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/login\""
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Login button can be submitted via Enter key",
+    "description": "Verifies that pressing Enter from the password field submits the login form and navigates to the employee list on success.",
+    "category": "User Login",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Login\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username input field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password input field"
+      },
+      {
+        "type": "action",
+        "description": "Press Enter"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Employee List\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Employee list loads and displays employees table",
+    "description": "Verifies an authenticated user can open the Employee List page and see the employees table.",
+    "category": "Employee List",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username or email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Employees\" (page heading) is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"employees table\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Search filters employee list with a matching term",
+    "description": "Verifies search input filters the employees shown in the table when a matching term is entered.",
+    "category": "Employee List",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username or email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click into the \"Search\" input"
+      },
+      {
+        "type": "action",
+        "description": "Type \"a\" into the \"Search\" input"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"employees table\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"No results\" is not visible"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Search shows empty state for a non-matching term",
+    "description": "Verifies entering a non-matching term shows an empty table or a no-results message.",
+    "category": "Employee List",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username or email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click into the \"Search\" input"
+      },
+      {
+        "type": "action",
+        "description": "Type \"zzzz_non_matching_term\" into the \"Search\" input"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"No results\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Open Add Employee dialog from list page",
+    "description": "Verifies the '+ Add Employee' action opens the Add Employee dialog from the Employee List page.",
+    "category": "Employee List",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username or email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"+ Add Employee\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Add Employee\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Add Employee dialog\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "View employee details dialog opens from the table",
+    "description": "Verifies clicking 'View' opens an employee details dialog.",
+    "category": "Employee List",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username or email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"View\" button for the first employee row"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Employee Details\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"employee details dialog\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Edit employee dialog opens from the table",
+    "description": "Verifies clicking 'Edit' opens the Edit Employee dialog for an employee.",
+    "category": "Employee List",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username or email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Edit\" button for the first employee row"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Edit Employee\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Edit Employee dialog\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Delete an employee from the list with confirmation",
+    "description": "Verifies an employee can be deleted via the confirmation dialog and is removed from the list afterward.",
+    "category": "Employee List",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username or email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Delete\" button for the first employee row"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Confirm\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Confirm\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Deleted\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Add employee successfully from the dedicated form page and confirm it appears in the list",
+    "description": "Verifies a user can submit the Add Employee form and then see the new employee in the employee list.",
+    "category": "Add Employee",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username/email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Add Employee\" or \"Add\" navigation option to open the Add Employee form page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/form\""
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Test User A\" into the Name input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"test.user.a@example.com\" into the Email input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"QA Engineer\" into the Position input field"
+      },
+      {
+        "type": "action",
+        "description": "Click Add Employee button to submit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Test User A\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Email is required: show validation when Email is empty",
+    "description": "Verifies the form prevents submission and shows an Email validation error when Email is left blank.",
+    "category": "Add Employee",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username/email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Add Employee\" or \"Add\" navigation option to open the Add Employee form page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/form\""
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Test User B\" into the Name input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"\" into the Email input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Developer\" into the Position input field"
+      },
+      {
+        "type": "action",
+        "description": "Click Add Employee button to submit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Email\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"required\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Form retains user-entered values after validation error (Email missing)",
+    "description": "Verifies the form does not clear Name/Position values when Email validation fails.",
+    "category": "Add Employee",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username/email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Add Employee\" or \"Add\" navigation option to open the Add Employee form page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/form\""
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Test User D\" into the Name input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"\" into the Email input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Analyst\" into the Position input field"
+      },
+      {
+        "type": "action",
+        "description": "Click Add Employee button to submit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Test User D\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Analyst\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Add employee with email containing plus-aliasing and confirm it appears in list",
+    "description": "Verifies the form accepts a valid email format with plus alias and the employee is added successfully.",
+    "category": "Add Employee",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username/email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Add Employee\" or \"Add\" navigation option to open the Add Employee form page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/form\""
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Test User E\" into the Name input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"test.user+alias@example.com\" into the Email input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"HR\" into the Position input field"
+      },
+      {
+        "type": "action",
+        "description": "Click Add Employee button to submit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Test User E\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Edit employee successfully from list and see updated values in the list",
+    "description": "Verifies a user can open the edit dialog from the employee list, update fields, submit, and see the updated employee values reflected in the list UI.",
+    "category": "Edit Employee",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username/email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Edit\" button for an employee row in the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Update Employee\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Updated Name\" into the Name input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"updated.email@example.com\" into the Email input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Updated Position\" into the Position input field"
+      },
+      {
+        "type": "action",
+        "description": "Click Update Employee button to submit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Updated Name\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"updated.email@example.com\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Updated Position\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Edit dialog opens with employee details visible for editing",
+    "description": "Verifies the edit dialog can be opened from the list and shows the expected editable fields before submitting changes.",
+    "category": "Edit Employee",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username/email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Edit\" button for an employee row in the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Name\" input field is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Email\" input field is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Position\" input field is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Update Employee\" button is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC020",
+    "title": "Validation: required field cleared blocks update and shows an error",
+    "description": "Verifies clearing a required field in the edit dialog prevents submission and displays a validation message to the user.",
+    "category": "Edit Employee",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username/email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Edit\" button for an employee row in the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Update Employee\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"\" into the Name input field"
+      },
+      {
+        "type": "action",
+        "description": "Click Update Employee button to submit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"required\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC021",
+    "title": "Validation: invalid email format shows error and does not update",
+    "description": "Verifies entering an invalid email format in the edit dialog triggers a visible validation error and blocks update.",
+    "category": "Edit Employee",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username/email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Edit\" button for an employee row in the list"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"not-an-email\" into the Email input field"
+      },
+      {
+        "type": "action",
+        "description": "Click Update Employee button to submit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"email\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"invalid\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC022",
+    "title": "Cancel/close edit dialog does not change employee values in the list",
+    "description": "Verifies closing the edit dialog without submitting does not modify the employee values shown in the list.",
+    "category": "Edit Employee",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username/email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Edit\" button for an employee row in the list"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Temp Name Not Saved\" into the Name input field"
+      },
+      {
+        "type": "action",
+        "description": "Press Escape key"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Update Employee\" is not visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Temp Name Not Saved\" is not visible"
+      }
+    ]
+  },
+  {
+    "id": "TC023",
+    "title": "Edit employee with leading/trailing spaces is handled and displayed consistently",
+    "description": "Verifies updating fields containing leading/trailing spaces results in a sensible displayed value after update.",
+    "category": "Edit Employee",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the username/email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/list\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Edit\" button for an employee row in the list"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"  Spaced Name  \" into the Name input field"
+      },
+      {
+        "type": "action",
+        "description": "Click Update Employee button to submit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Spaced Name\" is visible"
+      }
+    ]
+  }
+]

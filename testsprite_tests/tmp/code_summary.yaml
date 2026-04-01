@@ -1,0 +1,145 @@
+version: "2"
+type: frontend
+tech_stack:
+  - React 19
+  - Vite
+  - Material UI (MUI v7)
+  - React Router DOM v7
+  - Axios
+  - JavaScript (JSX)
+routes:
+  - path: /login
+    file: src/components/Login.jsx
+    auth_required: false
+    description: Login page with username/password form
+  - path: /list
+    file: src/components/EmployeeList.jsx
+    auth_required: true
+    description: Employee list with search, view, edit, delete, and add functionality
+  - path: /form
+    file: src/components/EmployeeForm.jsx
+    auth_required: true
+    description: Dedicated add employee form page
+  - path: /
+    file: src/App.jsx
+    auth_required: true
+    description: Redirects authenticated users to /list, otherwise to /login
+features:
+  - name: User Login
+    description: Authenticates users with username and password against the backend
+    files:
+      - src/components/Login.jsx
+      - src/App.jsx
+    entry_route: /login
+    user_interactions:
+      - Fill Username input field
+      - Fill Password input field
+      - Click Login button to submit
+      - See error message on invalid credentials
+    api_calls:
+      - method: POST
+        endpoint: http://localhost:4000/login
+    auth_required: false
+  - name: Employee List
+    description: Displays all employees in a table with search and action buttons
+    files:
+      - src/components/EmployeeList.jsx
+    entry_route: /list
+    user_interactions:
+      - Search employees by name/email/position using search input
+      - Click View button to open employee details dialog
+      - Click Edit button to open edit dialog
+      - Click Delete button to open confirmation dialog
+      - Click Add Employee button to open add dialog
+      - Click Employee List nav link
+    api_calls:
+      - method: GET
+        endpoint: http://localhost:4000/employees
+    auth_required: true
+  - name: Add Employee (Dialog)
+    description: Add a new employee via a modal dialog from the employee list page
+    files:
+      - src/components/EmployeeList.jsx
+    entry_route: /list
+    user_interactions:
+      - Click Add Employee button to open dialog
+      - Fill Name field
+      - Fill Email field
+      - Fill Position field
+      - Click Add Employee submit button
+      - Click Cancel to close dialog without saving
+    api_calls:
+      - method: POST
+        endpoint: http://localhost:4000/employees
+    auth_required: true
+  - name: Add Employee (Form Page)
+    description: Add a new employee via the dedicated /form page
+    files:
+      - src/components/EmployeeForm.jsx
+    entry_route: /form
+    user_interactions:
+      - Fill Name field
+      - Fill Email field
+      - Fill Position field
+      - Click Add Employee submit button
+      - See success message and redirect to /list
+      - See error message on validation failure or server error
+    api_calls:
+      - method: POST
+        endpoint: http://localhost:4000/employees
+    auth_required: true
+  - name: Edit Employee
+    description: Edit an existing employee's details via a dialog from the list page
+    files:
+      - src/components/EmployeeList.jsx
+    entry_route: /list
+    user_interactions:
+      - Click Edit button on an employee row
+      - Update Name, Email, or Position fields
+      - Click Update Employee button to save
+      - See success message and table row updates
+      - Click Cancel to close without saving
+    api_calls:
+      - method: PUT
+        endpoint: http://localhost:4000/employees/:id
+    auth_required: true
+  - name: Delete Employee
+    description: Delete an employee with a confirmation dialog
+    files:
+      - src/components/EmployeeList.jsx
+    entry_route: /list
+    user_interactions:
+      - Click Delete button on an employee row
+      - See confirmation dialog with "Are you sure" message
+      - Click Confirm to delete
+      - Click Cancel to dismiss without deleting
+    api_calls:
+      - method: DELETE
+        endpoint: http://localhost:4000/employees/:id
+    auth_required: true
+  - name: Theme Toggle
+    description: Toggle between light and dark mode via the menu bar
+    files:
+      - src/components/MenuBar.jsx
+      - src/App.jsx
+    entry_route: /list
+    user_interactions:
+      - Click theme toggle button in the app bar
+    api_calls: []
+    auth_required: true
+  - name: Logout
+    description: Log out the current user and redirect to login page
+    files:
+      - src/components/MenuBar.jsx
+    entry_route: /list
+    user_interactions:
+      - Click Logoff button in the app bar
+    api_calls: []
+    auth_required: true
+known_limitations:
+  - issue: Auth is localStorage-based, no token or session management
+    location: src/App.jsx
+    impact: Any user can set localStorage manually to bypass login
+  - issue: Email validation may rely on browser native validation only
+    location: src/components/EmployeeForm.jsx
+    impact: Invalid emails may only be caught at the browser level
