@@ -6,7 +6,8 @@ A professional, enterprise-grade test automation framework for the Employee Mana
 
 - [🏗️ Architecture](#%EF%B8%8F-architecture)
 - [🎯 Test Coverage](#-test-coverage)
-- [🚀 Quick Start](#-quick-start)
+- [� Manual Testing](#-manual-testing)
+- [�🚀 Quick Start](#-quick-start)
 - [🔧 Installation](#-installation)
 - [▶️ Running Tests](#%EF%B8%8F-running-tests)
 - [📊 Test Reports](#-test-reports)
@@ -75,7 +76,57 @@ This test suite follows industry best practices with:
 - 🚀 Performance under load
 - 🛠️ Error recovery and graceful degradation
 
-## 🚀 Quick Start
+## � Manual Testing
+
+For **non-technical users, manual testers, and business stakeholders**, we provide comprehensive manual testing documentation:
+
+### 📋 [Complete Manual Test Cases](./MANUAL-TEST-CASES.md)
+*Detailed, step-by-step testing procedures written in plain English*
+
+**What you'll find:**
+- 🎯 **22 comprehensive test scenarios** covering all application features
+- 📝 **Step-by-step instructions** that anyone can follow
+- 🎪 **Business context** explaining why each test is important
+- ✅ **Expected results** and success criteria for each test
+- 🚨 **Troubleshooting guides** for common issues
+- 🔧 **Setup instructions** for testing environment
+
+**Perfect for:** Business users, manual QA testers, stakeholders, and anyone who needs to verify application functionality without technical knowledge.
+
+### ⚡ [Quick Testing Checklist](./MANUAL-TESTING-CHECKLIST.md)
+*Fast reference guide for efficient manual testing sessions*
+
+**What you'll find:**
+- ⏰ **70-minute complete test suite** with time estimates
+- 📊 **38 essential test checkpoints** organized by priority
+- 📝 **Test result tracking** forms and checklists  
+- 🎯 **Critical issue identification** guidelines
+- 📋 **Session summary templates** for reporting results
+
+**Perfect for:** Quick testing sessions, regression testing, and systematic test execution tracking.
+
+### 🎪 Manual Testing Benefits
+
+- **No Technical Skills Required** - Written for business users and manual testers
+- **Comprehensive Coverage** - All automated test scenarios explained in human language  
+- **Real Business Scenarios** - Tests reflect actual workplace usage patterns
+- **Quality Assurance** - Validates user experience beyond automated testing
+- **Cross-Training Tool** - Helps team members understand application functionality
+
+### 🏢 [Business Testing Overview](./BUSINESS-TESTING-OVERVIEW.md)
+*Executive summary for stakeholders and business leadership*
+
+**What you'll find:**
+- 📊 **Business impact** of each testing area
+- 🎯 **Quality assurance benefits** and ROI
+- 🔒 **Risk management** and compliance coverage
+- 📈 **Executive summary** of testing investment value
+
+**Perfect for:** Executives, business managers, and stakeholders who need high-level understanding of testing value and coverage.
+
+*Estimated time for complete manual testing: ~70 minutes*
+
+## �🚀 Quick Start
 
 **Single Command Test Execution with Ortoni Professional Reports:**
 
