@@ -1,0 +1,53 @@
+{
+  "name": "eaemployeewithtestsprite",
+  "version": "1.0.0",
+  "description": "Employee Manager Application with Comprehensive Playwright E2E Tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:e2e",
+    "test:e2e": "npm run test:cleanup && playwright test --config=playwright.config.js && npm run test:report",
+    "test:smoke": "npm run test:cleanup && playwright test --grep=\"@smoke\" && npm run test:report",
+    "test:critical": "npm run test:cleanup && playwright test --grep=\"@critical\" && npm run test:report",
+    "test:auth": "npm run test:cleanup && playwright test tests/e2e/auth.spec.js && npm run test:report",
+    "test:employees": "npm run test:cleanup && playwright test tests/e2e/employees.spec.js && npm run test:report",
+    "test:ui": "npm run test:cleanup && playwright test tests/e2e/ui-ux.spec.js && npm run test:report",
+    "test:validation": "npm run test:cleanup && playwright test tests/e2e/form-validation.spec.js && npm run test:report",
+    "test:integration": "npm run test:cleanup && playwright test tests/e2e/integration.spec.js && npm run test:report",
+    "test:headed": "npm run test:cleanup && playwright test --headed && npm run test:report",
+    "test:debug": "playwright test --debug",
+    "test:cleanup": "node scripts/cleanup-test-data.js",
+    "test:report": "node scripts/open-report.js",
+    "test:setup-check": "node scripts/test-setup.js",
+    "test:install": "playwright install",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run dev",
+    "start:dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "setup": "npm run test:install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/executeautomation/EAEmployeeWithTestSprite.git"
+  },
+  "keywords": [
+    "playwright",
+    "e2e-testing",
+    "employee-management",
+    "react",
+    "nodejs",
+    "automation",
+    "qa",
+    "testing"
+  ],
+  "author": "QA Automation Team",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/executeautomation/EAEmployeeWithTestSprite/issues"
+  },
+  "homepage": "https://github.com/executeautomation/EAEmployeeWithTestSprite#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "concurrently": "^9.2.1",
+    "ortoni-report": "^4.0.8"
+  }
+}
