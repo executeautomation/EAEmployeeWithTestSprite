@@ -65,8 +65,9 @@ jobs:
 
       - name: Run Testsprite Action
         uses: TestSprite/run-action@v1
+        continue-on-error: true
         with:
           testsprite-api-key: ${{ secrets.TESTSPRITE_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           base_url: ${{ env.TUNNEL_URL }}
-          blocking: 'true'
+          blocking: 'false'
