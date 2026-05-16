@@ -43,7 +43,13 @@ db.serialize(() => {
     ];
 
     const stmt = db.prepare('INSERT INTO employees (name, email, position) VALUES (?, ?, ?)');
-    seedEmployees.forEach((employee) => stmt.run(employee));
+    seedEmployees.forEach((employee) =>
+      stmt.run(employee, (insertErr) => {
+        if (insertErr) {
+          console.error('Could not seed employee row', insertErr);
+        }
+      })
+    );
     stmt.finalize((finalizeErr) => {
       if (finalizeErr) {
         console.error('Could not seed default employees', finalizeErr);
