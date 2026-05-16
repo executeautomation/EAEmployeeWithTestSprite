@@ -11,9 +11,7 @@
     "testIds": [],
     "additionalInstruction": "",
     "serverMode": "production",
-    "envs": {
-      "API_KEY": "sk-user-ygUdlSzGY5vRweyGXIbvIM7j5EeSx5AaPXAxQ-PkxoETEqwSeORcJ8Xa0-Lt72ITdW19XOOnSA2N6FAJhd-F-xBDdOsDNPgvK7x8t5bZv6Ry_9LrZtHYV5iuKAq1aNctp2E"
-    }
+    "envs": {}
   },
   "serverPort": 62394
 }
