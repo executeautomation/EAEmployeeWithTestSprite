@@ -39,7 +39,6 @@ const MenuBar = ({ onToggleTheme, mode }) => {
             color="inherit"
             onClick={onToggleTheme}
             aria-label={mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
-            title={mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
           >
             {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
