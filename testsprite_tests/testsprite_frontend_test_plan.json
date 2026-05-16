@@ -1,0 +1,917 @@
+[
+  {
+    "id": "TC001",
+    "title": "Login and open the employee directory",
+    "description": "A valid signed-in user can authenticate and reach the full employee list page.",
+    "category": "User Login",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee list page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee directory is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Log out and return to the login page",
+    "description": "This verifies that logging out from the app bar signs the user out and returns them to the login screen.",
+    "category": "Authentication and Routing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Log out from the app bar"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the login page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify protected employee pages are no longer accessible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "View the full employee table after login",
+    "description": "A signed-in user can load the directory and see the employee table populated with employee records.",
+    "category": "View Employee List",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee table is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify employee records are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Update an employee from a pre-filled edit form",
+    "description": "This verifies that a manager can open an existing employee for editing, change details, submit the update, and see the list refresh with the updated record.",
+    "category": "Edit Employee",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open an employee for editing from the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the edit form is pre-filled with the employee's current data"
+      },
+      {
+        "type": "action",
+        "description": "Change the employee name field"
+      },
+      {
+        "type": "action",
+        "description": "Change the employee email field"
+      },
+      {
+        "type": "action",
+        "description": "Change the employee position field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the update form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible and the updated employee appears in the list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Delete an employee after confirming the prompt",
+    "description": "This verifies that confirming deletion removes an employee from the directory and shows a success notification.",
+    "category": "Delete Employee",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Start deleting an employee from the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a confirmation dialog is visible for the selected employee"
+      },
+      {
+        "type": "action",
+        "description": "Confirm the deletion"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible and the employee is removed from the list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Delete an employee from the list and refresh the directory",
+    "description": "A signed-in user can remove an employee from the table and see that record no longer listed.",
+    "category": "View Employee List",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the delete flow for an employee in the table"
+      },
+      {
+        "type": "action",
+        "description": "Confirm the deletion"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee record is no longer visible in the table"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Add a new employee from the list page modal",
+    "description": "This verifies that a user can create a new employee from the list modal and see the new record appear in the directory.",
+    "category": "Add Employee",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the add employee dialog from the list page"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a valid employee name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a valid employee email"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the position field with a valid employee position"
+      },
+      {
+        "type": "action",
+        "description": "Submit the employee form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new employee appears in the list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Edit an employee from the list and keep the directory updated",
+    "description": "A signed-in user can update an existing employee from the table and see the revised record in the directory.",
+    "category": "View Employee List",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the edit flow for an employee in the table"
+      },
+      {
+        "type": "action",
+        "description": "Change one or more employee fields to valid updated values"
+      },
+      {
+        "type": "action",
+        "description": "Submit the employee form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated employee record is visible in the table"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Add a new employee from the standalone form page",
+    "description": "This verifies that a user can create a new employee from the dedicated form page and return to the list with the new record visible.",
+    "category": "Add Employee",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open the standalone employee form"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a valid employee name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a valid employee email"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the position field with a valid employee position"
+      },
+      {
+        "type": "action",
+        "description": "Submit the employee form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new employee appears in the list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Edit an existing employee from the list",
+    "description": "This verifies that a user can update an employee from the list and see the refreshed row data afterward.",
+    "category": "Add Employee",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the edit form for an employee from the list"
+      },
+      {
+        "type": "action",
+        "description": "Change the employee name to a valid updated value"
+      },
+      {
+        "type": "action",
+        "description": "Change the employee email to a valid updated value"
+      },
+      {
+        "type": "action",
+        "description": "Change the employee position to a valid updated value"
+      },
+      {
+        "type": "action",
+        "description": "Submit the employee form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee list reflects the updated employee"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Delete an employee from the list",
+    "description": "This verifies that a user can delete an employee from the list and the record is removed after confirmation.",
+    "category": "Add Employee",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the delete confirmation for an employee from the list"
+      },
+      {
+        "type": "action",
+        "description": "Confirm the delete action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee is removed from the list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Edit only one field and keep the rest of the employee data intact",
+    "description": "This verifies that submitting an edit with a single changed field preserves the other pre-filled employee values and refreshes the directory.",
+    "category": "Edit Employee",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open an employee for editing from the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the edit form is pre-filled with the employee's current data"
+      },
+      {
+        "type": "action",
+        "description": "Change the employee position field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the update form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible and the employee remains listed with the updated details"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Search filters employees by name, email, and position",
+    "description": "This verifies that typing a search term filters the employee directory to matching rows across the searchable fields.",
+    "category": "Search Employees",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Type a search term that matches an employee name, email, or position into the search field"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee table is filtered to matching employees"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Search the employee directory by employee details",
+    "description": "A signed-in user can search across employee fields and see the table filtered to matching employees.",
+    "category": "View Employee List",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Enter a search term that matches an employee name, email, or position"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee table is filtered to matching results"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify matching employee records are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "Open and close an employee details dialog",
+    "description": "This verifies that a user can open an employee’s details from the list and dismiss the dialog afterward.",
+    "category": "View Employee Details",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open an employee's details from the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee details dialog is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Close the details dialog"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee details dialog is no longer visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC016",
+    "title": "Open an employee details dialog from the list",
+    "description": "A signed-in user can open an employee’s details from the table and view the employee information dialog.",
+    "category": "View Employee List",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the details view for an employee in the table"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an employee details dialog is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected employee’s information is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC017",
+    "title": "Cancel an employee deletion",
+    "description": "This verifies that dismissing the delete confirmation keeps the employee in the list and returns the user to browsing.",
+    "category": "Delete Employee",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Start deleting an employee from the list"
+      },
+      {
+        "type": "action",
+        "description": "Cancel the deletion"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee list remains visible and the employee is still present"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC018",
+    "title": "Toggle between light and dark themes on the list page",
+    "description": "A signed-in user can switch themes from the employee list while staying on the same page.",
+    "category": "View Employee List",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme from the app bar"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme again from the app bar"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee list page remains displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the theme changes are reflected on the page"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC019",
+    "title": "Stay on the employee list while toggling the theme",
+    "description": "This verifies that the user can switch between light and dark themes without leaving the employee list page.",
+    "category": "Theme Toggle",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme setting"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme setting again"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee list remains visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC020",
+    "title": "Cancel an employee edit without saving changes",
+    "description": "This verifies that closing the edit form without submitting leaves the employee record unchanged in the list.",
+    "category": "Edit Employee",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open an employee for editing from the list"
+      },
+      {
+        "type": "action",
+        "description": "Close the edit form without submitting"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee list is still displayed and no update confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC021",
+    "title": "Switch between light and dark themes on the employee list",
+    "description": "This verifies that the user can toggle the app appearance while staying on the employee directory page.",
+    "category": "Dark/Light Theme Toggle",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /list"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme mode"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the interface switches to the other theme while the employee list remains visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC022",
+    "title": "Search shows an empty state when there are no matches",
+    "description": "This verifies that entering a search term with no matches shows the empty results message instead of any employee rows.",
+    "category": "Search Employees",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Type a search term that matches no employees into the search field"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an empty state message is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC023",
+    "title": "Reject invalid login credentials",
+    "description": "A user who enters invalid credentials sees an error and does not enter the employee area.",
+    "category": "User Login",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the username field with invalid-user"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with invalid-password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a login error message is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the employee list page is not displayed"
+      }
+    ],
+    "priority": "Low"
+  }
+]

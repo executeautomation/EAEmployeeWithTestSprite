@@ -1,0 +1,170 @@
+version: "2"
+type: frontend
+tech_stack:
+  - language: JavaScript (JSX)
+  - framework: React 19 + React Router v7
+  - ui_library: MUI (Material UI) v7
+  - build_tool: Vite 7
+  - http_client: Axios
+  - backend: Node.js + Express 5 + SQLite3
+routes:
+  - path: /login
+    file: src/components/Login.jsx
+    auth_required: false
+    description: User login page with username and password fields
+  - path: /form
+    file: src/components/EmployeeForm.jsx
+    auth_required: true
+    description: Standalone page to add a new employee
+  - path: /list
+    file: src/components/EmployeeList.jsx
+    auth_required: true
+    description: Employee list page with search, view, edit, delete, and add (modal) functionality
+  - path: /
+    file: src/App.jsx
+    auth_required: true
+    description: Root route redirects to /list if logged in, else to /login
+features:
+  - name: User Login
+    description: Authenticate with username and password. Valid credentials are admin/password, user/123456, test/test123. On success, sets loggedIn and username in localStorage and redirects to /list.
+    files:
+      - src/components/Login.jsx
+      - src/App.jsx
+    entry_route: /login
+    user_interactions:
+      - Fill the Username input field
+      - Fill the Password input field
+      - Click the Login button to submit
+      - See error message on invalid credentials
+      - Get redirected to /list on successful login
+    api_calls:
+      - method: POST
+        endpoint: /api/login
+    auth_required: false
+  - name: User Logout
+    description: Clicking Logoff in the navigation bar removes loggedIn from localStorage and redirects to /login.
+    files:
+      - src/components/MenuBar.jsx
+    entry_route: /list
+    user_interactions:
+      - Click the Logoff button in the AppBar
+      - Get redirected to /login page
+    api_calls: []
+    auth_required: true
+  - name: View Employee List
+    description: Displays a table of all employees fetched from the backend with columns ID, Name, Email, Position, and Actions.
+    files:
+      - src/components/EmployeeList.jsx
+    entry_route: /list
+    user_interactions:
+      - View table of all employees
+      - See loading state while data is fetched
+      - See error alert if fetch fails
+    api_calls:
+      - method: GET
+        endpoint: /api/employees
+    auth_required: true
+  - name: Search Employees
+    description: Filter the employee table in real-time by typing in the search field. Matches against name, email, and position fields.
+    files:
+      - src/components/EmployeeList.jsx
+    entry_route: /list
+    user_interactions:
+      - Type in the Search employees text field
+      - Table filters to show only matching employees
+      - See "No employees found." when no match
+    api_calls: []
+    auth_required: true
+  - name: Add Employee (Modal)
+    description: Open a dialog modal from the Employee List page to add a new employee with name, email, and position fields.
+    files:
+      - src/components/EmployeeList.jsx
+      - src/components/EmployeeForm.jsx
+    entry_route: /list
+    user_interactions:
+      - Click the "+ Add Employee" button
+      - Fill in Name, Email, and Position fields in the modal
+      - Click Add Employee button to submit
+      - See success alert on creation
+      - See error alert if required fields are missing or request fails
+      - Modal closes and list refreshes after success
+    api_calls:
+      - method: POST
+        endpoint: /api/employees
+    auth_required: true
+  - name: Add Employee (Standalone Page)
+    description: Standalone page at /form to add a new employee.
+    files:
+      - src/components/EmployeeForm.jsx
+    entry_route: /form
+    user_interactions:
+      - Navigate to /form via Add Employee nav link
+      - Fill in Name, Email, and Position fields
+      - Click Add Employee button
+      - See success alert and get redirected to /list
+    api_calls:
+      - method: POST
+        endpoint: /api/employees
+    auth_required: true
+  - name: View Employee Details
+    description: Click View on any employee row to open a dialog showing their ID, Name, Email, and Position.
+    files:
+      - src/components/EmployeeList.jsx
+    entry_route: /list
+    user_interactions:
+      - Click the View button on an employee row
+      - See employee details dialog with ID, Name, Email, Position
+      - Click Close to dismiss the dialog
+    api_calls: []
+    auth_required: true
+  - name: Edit Employee
+    description: Click Edit on any employee row to open an edit dialog pre-filled with the employee's current data. Submit updates the employee record.
+    files:
+      - src/components/EmployeeList.jsx
+      - src/components/EmployeeForm.jsx
+    entry_route: /list
+    user_interactions:
+      - Click the Edit button on an employee row
+      - See pre-filled form in dialog with current employee data
+      - Modify Name, Email, or Position fields
+      - Click Update Employee button to submit
+      - See success alert on update
+      - Dialog closes and list refreshes
+    api_calls:
+      - method: PUT
+        endpoint: /api/employees/:id
+    auth_required: true
+  - name: Delete Employee
+    description: Click Delete on any employee row to open a confirmation dialog. Confirm to permanently delete the employee.
+    files:
+      - src/components/EmployeeList.jsx
+    entry_route: /list
+    user_interactions:
+      - Click the Delete button on an employee row
+      - See confirmation dialog with employee name
+      - Click Delete button to confirm
+      - See success snackbar notification
+      - Employee is removed from the list
+      - Click Cancel to dismiss without deleting
+    api_calls:
+      - method: DELETE
+        endpoint: /api/employees/:id
+    auth_required: true
+  - name: Dark/Light Theme Toggle
+    description: Toggle between light and dark mode using the icon button in the AppBar.
+    files:
+      - src/components/MenuBar.jsx
+      - src/App.jsx
+    entry_route: /list
+    user_interactions:
+      - Click the theme toggle icon button in the AppBar
+      - UI switches between light and dark mode
+    api_calls: []
+    auth_required: false
+known_limitations:
+  - issue: Authentication uses hardcoded credentials in the backend (no database-backed user management)
+    location: backend/server.js
+    impact: Only admin/password, user/123456, and test/test123 are valid credentials
+  - issue: No JWT or session tokens; auth state stored only in localStorage
+    location: src/App.jsx
+    impact: Auth can be bypassed by manually setting localStorage.loggedIn = 'true'
