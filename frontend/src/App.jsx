@@ -7,6 +7,7 @@ import MenuBar from './components/MenuBar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
+
 const PrivateRoute = ({ children }) => {
   const loggedIn = localStorage.getItem('loggedIn') === 'true';
   return loggedIn ? children : <Navigate to="/login" />;
