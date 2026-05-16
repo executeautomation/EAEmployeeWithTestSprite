@@ -27,6 +27,29 @@ db.serialize(() => {
     email TEXT NOT NULL,
     position TEXT NOT NULL
   )`);
+
+  db.get('SELECT COUNT(*) AS count FROM employees', [], (err, row) => {
+    if (err) {
+      console.error('Could not check employee seed state', err);
+      return;
+    }
+
+    if (row.count > 0) return;
+
+    const seedEmployees = [
+      ['test', 'test@t.com', 'QA'],
+      ['john doe', 'john@example.com', 'Developer'],
+      ['jane smith', 'jane@example.com', 'Manager']
+    ];
+
+    const stmt = db.prepare('INSERT INTO employees (name, email, position) VALUES (?, ?, ?)');
+    seedEmployees.forEach((employee) => stmt.run(employee));
+    stmt.finalize((finalizeErr) => {
+      if (finalizeErr) {
+        console.error('Could not seed default employees', finalizeErr);
+      }
+    });
+  });
 });
 
 // Login endpoint with proper validation

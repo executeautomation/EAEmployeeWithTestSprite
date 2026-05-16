@@ -34,7 +34,13 @@ const MenuBar = ({ onToggleTheme, mode }) => {
           ) : (
             <Button color="inherit" component={Link} to="/login">Login</Button>
           )}
-          <IconButton sx={{ ml: 2 }} color="inherit" onClick={onToggleTheme}>
+          <IconButton
+            sx={{ ml: 2 }}
+            color="inherit"
+            onClick={onToggleTheme}
+            aria-label={mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            title={mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+          >
             {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
         </Box>
