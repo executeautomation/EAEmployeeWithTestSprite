@@ -2,19 +2,16 @@
   "status": "commited",
   "type": "frontend",
   "scope": "codebase",
-  "localEndpoint": "http://127.0.0.1:5173",
+  "localEndpoint": "http://localhost:5173",
   "loginUser": "admin",
   "loginPassword": "password",
   "executionArgs": {
-    "projectName": "EmployeeApp_new",
-    "projectPath": "/Users/karthik/tryout /GitRepoCode/EmployeeApp_new/frontend",
+    "projectName": "agents-testsprite-application-analysis",
+    "projectPath": "/Users/karthikkk/tryout/GitHub/EAEmployeeWithTestSprite.worktrees/agents-testsprite-application-analysis",
     "testIds": [],
-    "additionalInstruction": "The app uses Material UI components. Login credentials are admin/password. The backend runs on http://127.0.0.1:4000. After login, localStorage key 'loggedIn' is set to 'true'.",
+    "additionalInstruction": "",
     "serverMode": "production",
-    "envs": {
-      "API_KEY": "sk-user-AL7OWll3MKdFzOHBjlGJkADd6T2PCayWAeaWxCl6DQgG5Es1Qce8WjkXcH5cPtcjyHLJqcFVkNKym1ZU5Zlge9TH5kUd7wDPg0v3jpnOXwn29Cev7gse-qMLtsodlNZEqYk"
-    }
+    "envs": {}
   },
-  "serverPort": 61303,
-  "proxy": "http://d6a60f92-68e7-45c2-851d-19a3b92ff4e9:1BjgGA3DjTyc5uaIkWQEoSyGjApYBGXe@tun.testsprite.com:8080"
+  "serverPort": 62394
 }

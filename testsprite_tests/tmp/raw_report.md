@@ -4,222 +4,227 @@
 ---
 
 ## 1️⃣ Document Metadata
-- **Project Name:** EmployeeApp_new
-- **Date:** 2026-03-31
+- **Project Name:** agents-testsprite-application-analysis
+- **Date:** 2026-05-16
 - **Prepared by:** TestSprite AI Team
 
 ---
 
 ## 2️⃣ Requirement Validation Summary
 
-#### Test TC001 Successful login navigates user to Employee List
-- **Test Code:** [TC001_Successful_login_navigates_user_to_Employee_List.py](./TC001_Successful_login_navigates_user_to_Employee_List.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/4ca3a883-6571-46b7-9708-a703ce9c0d38
+#### Test TC001 Login and open the employee directory
+- **Test Code:** [TC001_Login_and_open_the_employee_directory.py](./TC001_Login_and_open_the_employee_directory.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/fd533264-b202-4744-8dc6-15c18ea70fbb
 - **Status:** ✅ Passed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC002 Login fails when password is empty
-- **Test Code:** [TC002_Login_fails_when_password_is_empty.py](./TC002_Login_fails_when_password_is_empty.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/c6ae2bc4-0cce-441c-977b-d675ef09b19f
+#### Test TC002 Log out and return to the login page
+- **Test Code:** [TC002_Log_out_and_return_to_the_login_page.py](./TC002_Log_out_and_return_to_the_login_page.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/82ecf659-65c7-40b1-be6f-d80ab3baf7c8
 - **Status:** ✅ Passed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC003 Login fails with incorrect password
-- **Test Code:** [TC003_Login_fails_with_incorrect_password.py](./TC003_Login_fails_with_incorrect_password.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/e8ceba52-3413-44ef-9098-08831dc6a152
+#### Test TC003 View the full employee table after login
+- **Test Code:** [TC003_View_the_full_employee_table_after_login.py](./TC003_View_the_full_employee_table_after_login.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/33135b6d-0d73-4006-b16e-10d88c3e4d27
 - **Status:** ✅ Passed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC004 Login fails when username is empty
-- **Test Code:** [TC004_Login_fails_when_username_is_empty.py](./TC004_Login_fails_when_username_is_empty.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/b0effee4-9472-40c4-b9ba-d89d3ff45420
+#### Test TC004 Update an employee from a pre-filled edit form
+- **Test Code:** [TC004_Update_an_employee_from_a_pre_filled_edit_form.py](./TC004_Update_an_employee_from_a_pre_filled_edit_form.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/d5b093d2-0cd4-4e6e-9cac-8f91bfc4badf
 - **Status:** ✅ Passed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC005 Login fails when both username and password are empty
-- **Test Code:** [TC005_Login_fails_when_both_username_and_password_are_empty.py](./TC005_Login_fails_when_both_username_and_password_are_empty.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/c6f4c12b-1cc1-44be-b45e-295a58b705cd
-- **Status:** ✅ Passed
-- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
----
+#### Test TC005 Delete an employee after confirming the prompt
+- **Test Code:** [TC005_Delete_an_employee_after_confirming_the_prompt.py](./TC005_Delete_an_employee_after_confirming_the_prompt.py)
+- **Test Error:** TEST FAILURE
 
-#### Test TC006 Login button can be submitted via Enter key
-- **Test Code:** [TC006_Login_button_can_be_submitted_via_Enter_key.py](./TC006_Login_button_can_be_submitted_via_Enter_key.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/f8b2b33d-f972-4da1-ac04-ebc6fe1a3684
-- **Status:** ✅ Passed
-- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
----
-
-#### Test TC007 Employee list loads and displays employees table
-- **Test Code:** [TC007_Employee_list_loads_and_displays_employees_table.py](./TC007_Employee_list_loads_and_displays_employees_table.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/999d2a07-e093-4e61-9032-9b3f8aaa1b4c
-- **Status:** ✅ Passed
-- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
----
-
-#### Test TC008 Search filters employee list with a matching term
-- **Test Code:** [TC008_Search_filters_employee_list_with_a_matching_term.py](./TC008_Search_filters_employee_list_with_a_matching_term.py)
-- **Test Error:** Filtering by the search input did not return any employees. The employees table still shows 'No employees found.' after entering 'a'.
+Confirming deletion did not remove the employee — the app returned an error and the employee remained in the list.
 
 Observations:
-- The Search employees input contains the value 'a'.
-- The table header (ID, Name, Email, Position, Actions) is visible.
-- The table body displays the message 'No employees found.' indicating zero results.
-- No employee rows are present in the table.
-- Current page URL is /list.
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/dfad5160-8192-44a7-9f1a-79517193d1a3
+- The page showed 'Failed to delete employee (Status: 404)'
+- The delete confirmation dialog remained open
+- The employee row (ID 16, name 'test') still appears in the Employee List
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/12b1a103-a1fc-4d52-8b3d-0140915e16a6
 - **Status:** ❌ Failed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC009 Search shows empty state for a non-matching term
-- **Test Code:** [TC009_Search_shows_empty_state_for_a_non_matching_term.py](./TC009_Search_shows_empty_state_for_a_non_matching_term.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/53821b71-5908-4c01-9382-3d5970fd77e0
+#### Test TC006 Delete an employee from the list and refresh the directory
+- **Test Code:** [TC006_Delete_an_employee_from_the_list_and_refresh_the_directory.py](./TC006_Delete_an_employee_from_the_list_and_refresh_the_directory.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/00987047-a50a-4f4a-a6c9-8a4466f9cd21
 - **Status:** ✅ Passed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC010 Open Add Employee dialog from list page
-- **Test Code:** [TC010_Open_Add_Employee_dialog_from_list_page.py](./TC010_Open_Add_Employee_dialog_from_list_page.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/ca73a6e5-cc7e-41ce-8dea-882e799f50b6
+#### Test TC007 Add a new employee from the list page modal
+- **Test Code:** [TC007_Add_a_new_employee_from_the_list_page_modal.py](./TC007_Add_a_new_employee_from_the_list_page_modal.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/6f697355-03f3-4655-8070-bea584f9a661
 - **Status:** ✅ Passed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC011 View employee details dialog opens from the table
-- **Test Code:** [TC011_View_employee_details_dialog_opens_from_the_table.py](./TC011_View_employee_details_dialog_opens_from_the_table.py)
-- **Test Error:** Clicking 'View' could not be verified because there are no employees listed to open details for.
+#### Test TC008 Edit an employee from the list and keep the directory updated
+- **Test Code:** [TC008_Edit_an_employee_from_the_list_and_keep_the_directory_updated.py](./TC008_Edit_an_employee_from_the_list_and_keep_the_directory_updated.py)
+- **Test Error:** TEST FAILURE
+
+Updating the employee did not work — the application returned a 404 and the changes were not saved.
 
 Observations:
-- The app is on the Employee List page (URL shows /list).
-- The table displays the message: "No employees found." 
-- There are no employee rows and no visible 'View' buttons in the Actions column.
-- The + ADD EMPLOYEE button is present, indicating the list is empty rather than the UI being missing.
-- Login was completed and the employee list page loaded, but no employee entries exist to open a details dialog.
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/6c3e5014-1591-40e1-8e01-6592dc31f4c1
+- The edit dialog displayed the error message: 'Employee not found (Status: 404)'.
+- The employee list still shows the original record: ID 16, name 'test', email 'test@t.com', position 'QA'.
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/0faa311d-ee72-4252-b5fe-cc7ba59de482
 - **Status:** ❌ Failed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC012 Edit employee dialog opens from the table
-- **Test Code:** [TC012_Edit_employee_dialog_opens_from_the_table.py](./TC012_Edit_employee_dialog_opens_from_the_table.py)
-- **Test Error:** Verification could not be completed because there are no employee entries in the list to edit.
+#### Test TC009 Add a new employee from the standalone form page
+- **Test Code:** [TC009_Add_a_new_employee_from_the_standalone_form_page.py](./TC009_Add_a_new_employee_from_the_standalone_form_page.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/4a9c5200-941b-44c3-a1c0-28695444988a
+- **Status:** ✅ Passed
+- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
+---
+
+#### Test TC010 Edit an existing employee from the list
+- **Test Code:** [TC010_Edit_an_existing_employee_from_the_list.py](./TC010_Edit_an_existing_employee_from_the_list.py)
+- **Test Error:** TEST FAILURE
+
+Updating the employee did not work — the update was submitted but the application returned a not-found error.
 
 Observations:
-- The page shows the 'Employee List' view with table headers (ID, Name, Email, Position, Actions).
-- The table displays the message 'No employees found.' and no employee rows are present.
-- A '+ ADD EMPLOYEE' button is visible, and a 'Logoff' control is present (user appears logged in).
-- No 'Edit' buttons or employee action controls are available to click.
+- The Edit Employee modal showed the updated values (Name: 'updated test', Email: 'updated@test.com', Position: 'Senior QA').
+- After clicking 'Update Employee' an error banner appeared: 'Employee not found (Status: 404)'.
+- The employee list still shows the original row (Name 'test', Email 'test@t.com', Position 'QA'), so the data was not updated.
 
-Because there are no employees to select, the 'Edit Employee' dialog cannot be opened or verified.
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/d3968ff1-d49a-49d0-adb3-135c1e0b92cb
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/e17fa1b9-852f-4bc5-ad6d-d9bd4d10d507
 - **Status:** ❌ Failed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC013 Delete an employee from the list with confirmation
-- **Test Code:** [TC013_Delete_an_employee_from_the_list_with_confirmation.py](./TC013_Delete_an_employee_from_the_list_with_confirmation.py)
-- **Test Error:** Deletion could not be verified — clicking the Delete confirmation did not remove employees from the list.
+#### Test TC011 Delete an employee from the list
+- **Test Code:** [TC011_Delete_an_employee_from_the_list.py](./TC011_Delete_an_employee_from_the_list.py)
+- **Test Error:** TEST FAILURE
+
+Deleting an employee did not work — the delete action failed and the record was not removed from the list.
 
 Observations:
-- The app was reached and login succeeded; the Employee List page is visible.
-- The Delete confirmation dialog opened multiple times and the Delete/confirm button was clicked for several employees (IDs 8, 9, 10, 11, 12, 13).
-- After each confirmed deletion attempt, the targeted rows remained visible in the table (e.g., ID 11, ID 12, ID 13 were still present when checked).
-- The current list shows IDs 14 and 15 (Updated Name, Test User A) and no success messages indicating deletion were observed.
-- Some confirmation dialogs showed transient 'Processing...' or 'Deleting...' states but the table content did not update to remove the rows.
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/8ce0caa9-8acb-46f9-bf1b-439b13237797
+- The page displayed the error banner: 'Failed to delete employee (Status: 404)'.
+- The delete confirmation modal remained open and the employee row (ID 16, name 'test') is still present in the list.
+
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/13164dd6-3ca7-4e16-860e-1061d4350965
 - **Status:** ❌ Failed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC014 Add employee successfully from the dedicated form page and confirm it appears in the list
-- **Test Code:** [TC014_Add_employee_successfully_from_the_dedicated_form_page_and_confirm_it_appears_in_the_list.py](./TC014_Add_employee_successfully_from_the_dedicated_form_page_and_confirm_it_appears_in_the_list.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/b1e137f0-a83c-4c5f-baaf-02244a2854fd
-- **Status:** ✅ Passed
-- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
----
+#### Test TC012 Edit only one field and keep the rest of the employee data intact
+- **Test Code:** [TC012_Edit_only_one_field_and_keep_the_rest_of_the_employee_data_intact.py](./TC012_Edit_only_one_field_and_keep_the_rest_of_the_employee_data_intact.py)
+- **Test Error:** TEST FAILURE
 
-#### Test TC015 Email is required: show validation when Email is empty
-- **Test Code:** [TC015_Email_is_required_show_validation_when_Email_is_empty.py](./TC015_Email_is_required_show_validation_when_Email_is_empty.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/02bc901d-5019-4f0f-a631-0d662c94cf7f
-- **Status:** ✅ Passed
-- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
----
-
-#### Test TC016 Form retains user-entered values after validation error (Email missing)
-- **Test Code:** [TC016_Form_retains_user_entered_values_after_validation_error_Email_missing.py](./TC016_Form_retains_user_entered_values_after_validation_error_Email_missing.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/dfef7e42-efd1-4719-8698-077f8bd98ed7
-- **Status:** ✅ Passed
-- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
----
-
-#### Test TC017 Add employee with email containing plus-aliasing and confirm it appears in list
-- **Test Code:** [TC017_Add_employee_with_email_containing_plus_aliasing_and_confirm_it_appears_in_list.py](./TC017_Add_employee_with_email_containing_plus_aliasing_and_confirm_it_appears_in_list.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/99796d38-51f9-4d67-b384-47666d502a76
-- **Status:** ✅ Passed
-- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
----
-
-#### Test TC018 Edit employee successfully from list and see updated values in the list
-- **Test Code:** [TC018_Edit_employee_successfully_from_list_and_see_updated_values_in_the_list.py](./TC018_Edit_employee_successfully_from_list_and_see_updated_values_in_the_list.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/fc245c4f-e64f-49bb-ba94-8e4c38581a14
-- **Status:** ✅ Passed
-- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
----
-
-#### Test TC019 Edit dialog opens with employee details visible for editing
-- **Test Code:** [TC019_Edit_dialog_opens_with_employee_details_visible_for_editing.py](./TC019_Edit_dialog_opens_with_employee_details_visible_for_editing.py)
-- **Test Error:** Unable to open an edit dialog because no employee rows or Edit action are present on the Employee List page.
+Submitting the employee edit did not work — the update was not applied and the directory was not refreshed.
 
 Observations:
-- The app is currently showing the Employee List page (URL includes /list).
-- The list shows the header, a search input, and a "+ Add Employee" button, but the table displays: "No employees found." 
-- No employee rows or any Edit buttons are visible in the Actions column, so an edit dialog cannot be opened for an employee.
-- The top navigation (Employee Manager, Add Employee, Employee List, Logoff) is present.
+- The Edit modal displayed an error: 'Employee not found (Status: 404)'.
+- The employee row in the list still shows Position 'QA' (the change to 'Senior QA' was not applied).
 
-Because there are no employees and no Edit action to click, the requested verification (open the edit dialog and confirm Name, Email, Position inputs and Update button) cannot be performed.
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/45b29c95-d85f-479d-a141-ab7b516dbbb2
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/bfdf1e41-f7ed-4f66-aa43-937722588644
 - **Status:** ❌ Failed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC020 Validation: required field cleared blocks update and shows an error
-- **Test Code:** [TC020_Validation_required_field_cleared_blocks_update_and_shows_an_error.py](./TC020_Validation_required_field_cleared_blocks_update_and_shows_an_error.py)
-- **Test Error:** Clearing the Name field and submitting the Edit form did not show a validation message. The form accepted the submission attempt but no 'required' error text was displayed.
+#### Test TC013 Search filters employees by name, email, and position
+- **Test Code:** [TC013_Search_filters_employees_by_name_email_and_position.py](./TC013_Search_filters_employees_by_name_email_and_position.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/d56c46f1-be8f-4914-a931-eda0d92f778e
+- **Status:** ✅ Passed
+- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
+---
+
+#### Test TC014 Search the employee directory by employee details
+- **Test Code:** [TC014_Search_the_employee_directory_by_employee_details.py](./TC014_Search_the_employee_directory_by_employee_details.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/d75024d2-0f5f-4fbf-becd-85284e17f01f
+- **Status:** ✅ Passed
+- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
+---
+
+#### Test TC015 Open and close an employee details dialog
+- **Test Code:** [TC015_Open_and_close_an_employee_details_dialog.py](./TC015_Open_and_close_an_employee_details_dialog.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/b627c0a2-4dfa-48a4-beeb-601138a3867a
+- **Status:** ✅ Passed
+- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
+---
+
+#### Test TC016 Open an employee details dialog from the list
+- **Test Code:** [TC016_Open_an_employee_details_dialog_from_the_list.py](./TC016_Open_an_employee_details_dialog_from_the_list.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/da88c33e-b98f-4e1c-b789-e0d5908d2f78
+- **Status:** ✅ Passed
+- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
+---
+
+#### Test TC017 Cancel an employee deletion
+- **Test Code:** [TC017_Cancel_an_employee_deletion.py](./TC017_Cancel_an_employee_deletion.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/15d74bf9-b65b-42e5-b7fc-70530e164b71
+- **Status:** ✅ Passed
+- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
+---
+
+#### Test TC018 Toggle between light and dark themes on the list page
+- **Test Code:** [TC018_Toggle_between_light_and_dark_themes_on_the_list_page.py](./TC018_Toggle_between_light_and_dark_themes_on_the_list_page.py)
+- **Test Error:** TEST BLOCKED
+
+The theme toggle could not be reached — the control is not exposed as an interactive element, so the test cannot toggle the theme from the UI.
 
 Observations:
-- The Edit form was submitted after clearing the Name field and clicking 'Update Employee'.
-- No occurrence of the word 'required' or any visible validation message was found on the page.
-- The page shows form labels "Name*", "Email*", "Position*" and the buttons "Update Employee" and "Cancel" after submission.
-- The app is on the employee list page (/list) and the Edit dialog elements were present when tested.
-- The expected validation message for a cleared required field did not appear.
+- The app bar shows a gear icon in the screenshot.
+- No interactive element corresponding to the gear was found in the page's interactive elements list; only 'Add Employee', 'Employee List', and 'Logoff' are exposed.
 
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/af946e23-9cdd-4aed-adfc-1da706efc127
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/47c07380-8fef-4665-bd26-f2000a3699e4
+- **Status:** BLOCKED
+- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
+---
+
+#### Test TC019 Stay on the employee list while toggling the theme
+- **Test Code:** [TC019_Stay_on_the_employee_list_while_toggling_the_theme.py](./TC019_Stay_on_the_employee_list_while_toggling_the_theme.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/4f43df0f-f436-43fc-8a9f-bfc344344f93
+- **Status:** ✅ Passed
+- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
+---
+
+#### Test TC020 Cancel an employee edit without saving changes
+- **Test Code:** [TC020_Cancel_an_employee_edit_without_saving_changes.py](./TC020_Cancel_an_employee_edit_without_saving_changes.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/4220fbe2-0468-4bf9-835b-ccebb78e4148
+- **Status:** ✅ Passed
+- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
+---
+
+#### Test TC021 Switch between light and dark themes on the employee list
+- **Test Code:** [TC021_Switch_between_light_and_dark_themes_on_the_employee_list.py](./TC021_Switch_between_light_and_dark_themes_on_the_employee_list.py)
+- **Test Error:** TEST FAILURE
+
+The appearance/theme toggle control is not available or not interactive on the employee directory page, so the requested verification cannot be completed.
+
+Observations:
+- The Employee List page is visible and fully loaded (table with employee rows is present).
+- A gear icon is visible in the header visually, but no corresponding interactive control for theme/appearance is present in the page's interactive elements.
+- No button, switch, or menu labeled for theme, appearance, dark, or light was found to toggle the UI while staying on this page.
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/98008120-0736-443a-9d4a-e84f17cf73b5
 - **Status:** ❌ Failed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC021 Validation: invalid email format shows error and does not update
-- **Test Code:** [TC021_Validation_invalid_email_format_shows_error_and_does_not_update.py](./TC021_Validation_invalid_email_format_shows_error_and_does_not_update.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/08d34b8c-f295-4c94-b4a7-ddaeee51eda1
+#### Test TC022 Search shows an empty state when there are no matches
+- **Test Code:** [TC022_Search_shows_an_empty_state_when_there_are_no_matches.py](./TC022_Search_shows_an_empty_state_when_there_are_no_matches.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/81b52305-c11e-466a-b859-e7f017067a03
 - **Status:** ✅ Passed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
 
-#### Test TC022 Cancel/close edit dialog does not change employee values in the list
-- **Test Code:** [TC022_Cancelclose_edit_dialog_does_not_change_employee_values_in_the_list.py](./TC022_Cancelclose_edit_dialog_does_not_change_employee_values_in_the_list.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/bfdb020a-b21e-482d-a997-c59aa2b88834
-- **Status:** ✅ Passed
-- **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
----
-
-#### Test TC023 Edit employee with leading/trailing spaces is handled and displayed consistently
-- **Test Code:** [TC023_Edit_employee_with_leadingtrailing_spaces_is_handled_and_displayed_consistently.py](./TC023_Edit_employee_with_leadingtrailing_spaces_is_handled_and_displayed_consistently.py)
-- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2f09745e-3338-4f5f-9341-ceeb9fcc623d/ee312404-bc03-478f-9aa1-ef84953f7503
+#### Test TC023 Reject invalid login credentials
+- **Test Code:** [TC023_Reject_invalid_login_credentials.py](./TC023_Reject_invalid_login_credentials.py)
+- **Test Visualization and Result:** https://www.testsprite.com/dashboard/mcp/tests/2bea345f-ec7d-4c1e-a40f-63056ecadf48/990b7fea-b075-477a-9129-60182b759994
 - **Status:** ✅ Passed
 - **Analysis / Findings:** {{TODO:AI_ANALYSIS}}.
 ---
@@ -227,7 +232,7 @@ Observations:
 
 ## 3️⃣ Coverage & Matching Metrics
 
-- **73.91** of tests passed
+- **69.57** of tests passed
 
 | Requirement        | Total Tests | ✅ Passed | ❌ Failed  |
 |--------------------|-------------|-----------|------------|
